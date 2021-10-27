@@ -1,0 +1,6 @@
+{
+	"appId": "com.lingyo.lingyo",
+	"appName": "lingyo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

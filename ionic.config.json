@@ -1,0 +1,10 @@
+{
+  "name": "lingyo",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}
