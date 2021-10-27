@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "991376111507",
+    "project_id": "aerial-ether-238214",
+    "storage_bucket": "aerial-ether-238214.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991376111507:android:8bf705e6b13d78e03c5a66",
+        "android_client_info": {
+          "package_name": "com.lingyo.lingyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991376111507-huhacm7o20k55t0mo8uaf2hf1jjgqib6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6DETYVQobd0x3XJlx8wsk2TcuITNXudw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991376111507-huhacm7o20k55t0mo8uaf2hf1jjgqib6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
