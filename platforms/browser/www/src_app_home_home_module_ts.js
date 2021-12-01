@@ -172,7 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<iframe src=\"https://lingyo.vn\"  style=\"border: none; width: 100%; height: 100%;\" scrolling=\"yes\" allow=\"camera; microphone; geolocation\"></iframe>\n<style>body{margin: 0;}</style>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<iframe src=\"https://lingyo.vn\" id=\"lingyo-iframe\" style=\"border: none; width: 100%; height: 100%;\" scrolling=\"yes\" allow=\"camera; microphone; geolocation\"></iframe>\n<style>body{margin: 0;}</style>");
 
 /***/ })
 

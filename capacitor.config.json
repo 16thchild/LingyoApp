@@ -1,6 +1,22 @@
 {
-	"appId": "com.lingyo.lingyo",
-	"appName": "lingyo",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.lingyo.lingyo",
+  "appName": "Lingyo",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "cordova": {
+    "preferences": {
+      "AllowsInlineMediaPlayback": "true",
+      "ScrollEnabled": "false",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "3000",
+      "ShowSplashScreenSpinner": "false",
+      "android-targetSdkVersion": "30",
+      "scheme": "https",
+      "hostname": "lingyo.vn"
+    }
+  }
 }

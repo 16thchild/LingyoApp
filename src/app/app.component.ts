@@ -6,6 +6,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { HttpClient } from '@angular/common/http';
 
+declare var wkWebView: any
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -35,6 +37,10 @@ export class AppComponent {
         result => console.log('Has permission?',result.hasPermission),
         err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
       );
+
+      if (this.platform.is('ios')) {
+        wkWebView.injectCookie('https://lingyo.vn', '/')
+      }
       
       this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]);
       this.oneSignal.startInit('efa501b3-8346-4a6f-a6d8-2015fdb115b6', '991376111507');

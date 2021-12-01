@@ -73,14 +73,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-camera": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-camera@^2.0.5"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-compat": {
     "source": {
       "type": "registry",
@@ -101,6 +93,41 @@
     "source": {
       "type": "registry",
       "id": "onesignal-cordova-plugin@2.11.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-wkwebview-inject-cookie": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-wkwebview-inject-cookie@^1.1.6"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@6.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "CAMERA_USAGE_DESCRIPTION": "Lingyo would like to use your camera to upload your profile photo for authenticity. Your photos won't be shared without your permission",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": "Lingyo need photo library access to get pictures from there"
+    }
+  },
+  "cordova-plugin-iosrtc": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-iosrtc"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-add-swift-support": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-add-swift-support"
     },
     "is_top_level": true,
     "variables": {}

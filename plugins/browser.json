@@ -37,19 +37,24 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.lingyo.lingyo"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.lingyo.lingyo"
-    },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.lingyo.lingyo"
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.lingyo.lingyo"
-    }
-  },
-  "dependent_plugins": {
-    "cordova-plugin-compat": {
+    },
+    "cordova-plugin-wkwebview-inject-cookie": {
+      "PACKAGE_NAME": "com.lingyo.lingyo"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.lingyo.lingyo"
+    },
+    "cordova-plugin-iosrtc": {
+      "PACKAGE_NAME": "com.lingyo.lingyo"
+    },
+    "cordova-plugin-add-swift-support": {
       "PACKAGE_NAME": "com.lingyo.lingyo"
     }
-  }
+  },
+  "dependent_plugins": {}
 }
