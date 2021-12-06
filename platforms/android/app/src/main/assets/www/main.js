@@ -114,6 +114,9 @@ let AppComponent = class AppComponent {
             this.statusBar.backgroundColorByHexString('#ffffff');
             this.splashScreen.hide();
             this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(result => console.log('Has permission?', result.hasPermission), err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA));
+            if (this.platform.is('ios')) {
+                wkWebView.injectCookie('https://lingyo.vn', '/');
+            }
             this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]);
             this.oneSignal.startInit('efa501b3-8346-4a6f-a6d8-2015fdb115b6', '991376111507');
             this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);

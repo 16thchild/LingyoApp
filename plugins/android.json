@@ -61,6 +61,12 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.lingyo.lingyo"
+    },
+    "cordova-plugin-iosrtc": {
+      "PACKAGE_NAME": "com.lingyo.lingyo"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.lingyo.lingyo"
     }
   },
   "dependent_plugins": {}

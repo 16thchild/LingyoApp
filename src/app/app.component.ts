@@ -2,10 +2,15 @@ import { Component } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { HttpClient } from '@angular/common/http';
+import { Http } from '@capacitor-community/http';
 
+// const { StatusBar } = Plugins;
+// const { Browser } = Plugins;
+declare var cordova: any;
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -16,8 +21,8 @@ export class AppComponent {
   constructor(
     private oneSignal: OneSignal, 
     private platform: Platform, 
-    private statusBar: StatusBar, 
     private splashScreen: SplashScreen, 
+    private statusBar: StatusBar,
     private androidPermissions: AndroidPermissions,
     private http: HttpClient,
     ) {
@@ -27,10 +32,31 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString("#ffffff");
       // if(this.platform.is('cordova')){
-      this.statusBar.backgroundColorByHexString('#ffffff');
+      // StatusBar.setStyle({style: StatusBarStyle.Dark});
       this.splashScreen.hide();
+      cordova.InAppBrowser.open("https://lingyo.vn", "_blank", "location=no, zoom=no, toolbar=no, hidenavigationbuttons=yes")
+      window.open = cordova.InAppBrowser.open;
+      // Browser.open({ url: 'https://lingyo.vn/' });
+      // const doGet = () => {
+      //   const options = {
+      //     url: 'https://lingyo.vn',
+  
+      //   }
+
+      //   Http.request({ ...options, method: 'GET'});
+      // }
+      // doGet();
+
+      cordova.plugins.iosrtc.registerGlobals();
+      var adapterVersion = 'latest';
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://webrtc.github.io/adapter-" + adapterVersion + ".js";4
+      script.async = false;
+      document.getElementsByTagName("head")[0].appendChild(script);
+
       this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
         result => console.log('Has permission?',result.hasPermission),
         err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
