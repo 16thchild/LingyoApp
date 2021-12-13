@@ -76,16 +76,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 1106);
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 3069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 1524);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 3494);
 /* harmony import */ var _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/android-permissions/ngx */ 9315);
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ 1779);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ 3760);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ 1841);
+
 
 
 
@@ -97,13 +99,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(oneSignal, platform, statusBar, splashScreen, androidPermissions, http) {
+    constructor(oneSignal, platform, statusBar, splashScreen, androidPermissions, http, inAppBrowser) {
         this.oneSignal = oneSignal;
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
         this.androidPermissions = androidPermissions;
         this.http = http;
+        this.inAppBrowser = inAppBrowser;
         this.initializeApp();
         // this.statusBar.overlaysWebView(true);
     }
@@ -112,11 +115,16 @@ let AppComponent = class AppComponent {
             // this.statusBar.styleDefault();
             // if(this.platform.is('cordova')){
             this.statusBar.backgroundColorByHexString('#ffffff');
+            // StatusBar.setStyle({ style: Style.Light });
+            // SplashScreen.hide();
             this.splashScreen.hide();
+            // Browser.open({ url: 'https://gapo.vn/' });
+            let browser = this.inAppBrowser.create('https://lingyo.vn/', '_self', { zoom: 'no', location: 'no' });
+            browser.show();
             this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(result => console.log('Has permission?', result.hasPermission), err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA));
             this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]);
             this.oneSignal.startInit('efa501b3-8346-4a6f-a6d8-2015fdb115b6', '991376111507');
-            this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+            // this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
             this.oneSignal.handleNotificationReceived().subscribe(() => {
             });
             this.oneSignal.handleNotificationOpened().subscribe(() => {
@@ -131,14 +139,15 @@ let AppComponent = class AppComponent {
 };
 AppComponent.ctorParameters = () => [
     { type: _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_5__.OneSignal },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.Platform },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform },
     { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__.StatusBar },
     { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__.SplashScreen },
     { type: _ionic_native_android_permissions_ngx__WEBPACK_IMPORTED_MODULE_4__.AndroidPermissions },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClient },
+    { type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__.InAppBrowser }
 ];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
         selector: 'app-root',
         template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -533,7 +542,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<!-- <iframe src=\"https://lingyo.vn\"  style=\"border: none; width: 100%; height: 100%;\" scrolling=\"yes\" allow=\"camera; microphone; geolocation\"></iframe>\n<style>body{margin: 0;}</style> -->\n<ion-app>\n    <ion-router-outlet></ion-router-outlet>\n  </ion-app>\n  ");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<iframe src=\"https://lingyo.vn\"  style=\"border: none; width: 100%; height: 100%;\" scrolling=\"yes\" allow=\"camera; microphone; geolocation\"></iframe>\r\n<style>body{margin: 0;}</style>\r\n<ion-app>\r\n    <ion-router-outlet></ion-router-outlet>\r\n  </ion-app>\r\n  ");
 
 /***/ })
 

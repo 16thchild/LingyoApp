@@ -14,10 +14,10 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 export class HomePage {
 
   constructor(private inAppBrowser : InAppBrowser, private platform : Platform, private browserTab : BrowserTab, public googlePlus: GooglePlus) {
-    // platform.ready().then(() => {
-    //   let browser = this.inAppBrowser.create('https://lingyo.vn/','_blank',{zoom:'no', location:'no', camera: 'yes'});
-    //   browser.show();
-    // })
+    platform.ready().then(() => {
+      let browser = this.inAppBrowser.create('https://lingyo.vn/','_blank',{zoom:'no', location:'no'});
+      browser.show();
+    })
     this.platform.backButton.subscribeWithPriority(10, () => {
       window.history.back();
     });
