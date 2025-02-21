@@ -10,3 +10,17 @@ IOC HASH:
 135df41453dc6ad4cf72f724b5888732
 listid
 FD3A9BFB0A04630B1DDB1F35C0565825
+
+- Timestamp: 2025-02-18 16:26:20
+- Hostname: dh-phuongpth (Primary user: Phuong, Phan Thi Ha (BH-DH))
+- IP: 10.10.12.146
+- OS: Windows 10 
+- Asset group: Duyen Hai
+- Device AAD id: c15f8e14-128d-4bc2-9a39-0f8c4a1ed265
+- machine-id: ac6e021f1b78f45fa65fd8d16b129c177e803540
+- Dấu vết mã độc: 
+o Dòng mã độc: PUA:Win32/UltraSurf, Crack,...
+o File path: 
+E:\MH' S\Internet Download Manager\u1603.exe
+E:\MH' S\Data Soft\TeamViewer Premium Enterprise 12.0.82216\TeamViewer Premium Enterprise 12.0.82216\Complete Setup\DeltaFoX_TeamURET\URET NFO v2.2.exe
+E:\MH' S\Data Soft\xptcprep.exe
